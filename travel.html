@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travelling World</title>
+    </head>
+    <body>
+    <header>
+        <a href="#" class = "brand">Travel</a>
+        <div class="menu-btn"></div>
+        <div class = "navigation">
+            <div class = "navigation-items">
+                <a href = "#">Home</a>
+                <a href = "#">About</a>
+                <a href = "#">Explore</a>
+                <a href = "#">Gallery</a>
+                <a href = "#">Contact</a>
+        </div>
+        </div>
+</header>
+<section class="home">
+    <video class = "video-slide active" src = "vid1.mp4" autoplay muted loop ></video>
+    <video class = "video-slide" src = "vid2.mp4" autoplay muted loop ></video>
+    <video class = "video-slide" src = "vid3.mp4" autoplay muted loop ></video>
+    <video class = "video-slide" src = "vid4.mp4" autoplay muted loop ></video>
+
+    <div class="content active">
+        <h1>Resplendent<br><span>façade</span></h1>
+        <p>Under the veil of night, the building's resplendent facade transforms into 
+            a breathtaking spectacle.Illuminated by carefully placed lights, the intricate
+            details of the architecture are cast in a soft,golden glow,highlighting the elegant
+            curves and ornate carvings that adorn its surface.
+        </p>
+        <a href="#">Read More</a>
+    </div>
+    <div class="content">
+        <h1>Cascading<br><span>torrent</span></h1>
+        <p>The majestic peaks of the mountains rise sharply against the azure sky, their snow-capped summits glistening in the golden light of dusk. Below, cascading waterfalls tumble gracefully over rugged cliffs into crystal-clear pools, while verdant valleys cradle meandering rivers that sparkle in the sunlight. Lush foliage carpets the ancient woodlands, where the whispering pines sway gently in the breeze, creating a serene and timeless landscape.</p>
+
+        <a href="#">Read More</a>
+    </div>
+    <div class="content">
+        <h1>Verdent<br><span>Valleys</span></h1>
+        <p>The majestic peaks of the mountains rise sharply against the azure sky, their snow-capped summits glistening in the golden light of dusk. Below, cascading waterfalls tumble gracefully over rugged cliffs into crystal-clear pools, while verdant valleys cradle meandering rivers that sparkle in the sunlight. Lush foliage carpets the ancient woodlands, where the whispering pines sway gently in the breeze, creating a serene and timeless landscape.</p>
+
+        <a href="#">Read More</a>
+    </div>
+    <div class="content">
+        <h1>Timeless<br><span>Grandeur</span></h1>
+        <p>
+            The grandiose cathedral, with its towering spires and intricate stained glass windows, stands as a testament to medieval craftsmanship. Its stone façade, adorned with delicate carvings and gargoyles, creates a stunning contrast against the clear blue sky. Inside, the soaring vaulted ceilings and richly decorated altars evoke a sense of awe and reverence, inviting visitors to marvel at the beauty and history embedded within its walls.
+        </p>
+        
+
+        <a href="#">Read More</a>
+    </div>
+
+ <div class="slider-navigation">
+        <div class = "nav-btn"></div>
+        <div class = "nav-btn"></div>
+        <div class = "nav-btn"></div>
+        <div class = "nav-btn"></div>
+    </div>
+    
+</section>
+<script type="text/javascript">
+const btns = document.querySelectorAll(".nav-btn");
+const slides = document.querySelectorAll(".video-slide");
+const contents = document.querySelectorAll(".content");
+
+var sliderNav = function(manual){
+    // Remove active class from all buttons, slides, and contents
+    btns.forEach((btn) => btn.classList.remove("active"));
+    slides.forEach((slide) => slide.classList.remove("active"));
+    contents.forEach((content) => content.classList.remove("active"));
+
+    // Add active class to the clicked button, corresponding slide, and content
+    btns[manual].classList.add("active");
+    slides[manual].classList.add("active");
+    contents[manual].classList.add("active");
+}
+
+// Add click event listener to each button
+btns.forEach((btn, i) => {
+    btn.addEventListener("click", () => { 
+        sliderNav(i);  // Pass the index of the clicked button to the function
+    });
+});
+
+
+</script>
+
+    
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+}
+</style>
+<style>
+header{
+    z-index: 999;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    transition: 0.5s ease;
+    }
+    </style>
+    <style>
+header .brand{
+    color: #fff;
+    font-style: bold;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+</style>
+<style>
+header .navigation{
+    position: relative;
+
+}
+</style>
+<style>
+header .navigation .navigation-items a{
+    position:relative;
+    color: #fff;
+    font-size:1em;
+    font-weight:500;
+    text-decoration:none;
+    margin-left: 30px;
+    transition: 0.3s ease
+}
+</style>
+<style>
+    header .navigation .navigation-items a:before{
+        content: '';
+        position:absolute;
+        background: #fff;
+        width: 100%;
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        transition: 0.3s ease;
+
+    }
+</style>
+<style>
+    header .navigation .navigation-items a:hover:before{
+        width:100%;
+    }
+</style>
+<style>
+    section{
+        padding:100px 200px;
+    }
+</style>
+<style>
+    .home{
+        position: relative;
+        width:100%;
+        min-height: 100vh;
+        display:flex;
+        justify-content: center;
+        flex-direction:column;
+        background:#2696E9;
+    }
+</style>
+<style>
+    .home:before{
+        z-index: 777;
+        content: '';
+        position: absolute;
+        background: rgba(3, 96, 251, 0.3);
+        width: 100%;
+        height:100%;
+        top:0;
+        left:0;
+    
+    }
+</style>
+<style>
+    .home .content{
+        z-index: 888;
+        color:#fff;
+        width: 70%;
+        margin-top:50px;
+        display:none;
+
+    }
+
+</style>
+<style>
+    .home .content.active{
+        display:block;
+    }
+</style>
+<style>
+    .home .content h1{
+        font-size: 4em;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        line-height:75px;
+        margin-bottom: 40px;
+    }
+</style>
+<style>
+    .home .content h1 span {
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+</style>
+<style>
+    .home .content p{
+        margin-bottom:65px;
+
+    }
+</style>
+<style>
+    .home .content a{
+        background:#fff;
+        padding: 15px 35 px;
+        color:#1680AC;
+        font: size 1.1em;
+        text-decoration:none;
+        border-radius:2px;
+    }
+</style>
+<style>
+    .home video{
+        z-index:000;
+        position:absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit:cover;
+    }
+</style>
+<style>
+    .slider-navigation{
+        z-index:888;
+        position:relative;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        transform: translateY(80px);
+        margin-bottom: 12px;
+    }
+</style>
+<style>
+    .slider-navigation .nav-btn{
+        width: 12px;
+        height: 12px;
+        background: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 0 2px rgba(225 , 225, 255, 0.5);
+        transition: 0.3s ease;
+    }
+</style>
+<style>
+    .slider-navigation .nav-btn.active{
+        background: #2696E9;
+    }
+</style>
+<style>
+    .slider-navigation .nav-btn:not(:last-child){
+        margin-right: 20px;
+    }
+</style>
+<style>
+    .slider-navigation .nav-btn:hover{
+        transform:scale(1.2);
+    }
+
+</style>
+<style>
+    .video-slide{
+        position:absolute;
+        width: 100%;
+        clip-path: circle(0% at 0 50%);
+    }
+</style>
+<style>
+    .video-slide.active{
+        clip-path: circle(150% at 0 50%);
+        transition: 2s ease;
+        transition-property: clip-path; 
+
+    }
+</style>
+
+
+
+</body>
+</html>
